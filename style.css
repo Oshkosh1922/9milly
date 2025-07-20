@@ -1,0 +1,491 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: #e4eef7;
+  color: #222;
+  cursor: url('assets/gun-cursor.png') 16 16, auto;
+  overflow-x: hidden;
+}
+
+@media (pointer: coarse) {
+  body {
+    cursor: auto !important;
+  }
+}
+
+.hero {
+  background: radial-gradient(circle at center, #def1ab 0%, #efbc6f 100%);
+  padding: 100px 20px 60px;
+  color: white;
+  position: relative;
+  text-align: center;
+  border-bottom: 5px solid #536ffa;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  width: 200%;
+  height: 200%;
+  background: url('assets/smoke.gif') center/cover no-repeat;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatSmoke 25s linear infinite;
+}
+
+@keyframes floatSmoke {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-100px); }
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.logo.pop-glow {
+  width: 320px;
+  max-width: 100%;
+  filter: drop-shadow(0 0 15px #536ffa);
+  animation: pulse 0.5s infinite ease-in-out;
+}
+
+.tagline {
+  font-size: 2.3rem;
+  margin: 20px 0;
+  font-weight: 700;
+  color: #536ffa;
+  text-shadow: 1px 1px 5px black;
+}
+
+.intro {
+  color: #536ffa;
+  font-size: 1.4rem;
+  line-height: 1.6;
+  margin: 20px auto;
+  max-width: 700px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  background: #fff;
+  border: 2px solid #999;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #333;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  background: #ffde59;
+  color: #000;
+  border-color: #e0b400;
+  transform: scale(1.05);
+}
+
+.why-section, .tokenomics-section, .roadmap-section, .community-section {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.why-grid div {
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+}
+
+.why-grid img {
+  width: 40px;
+  margin-bottom: 0.5rem;
+}
+
+.tokenomics-section ul {
+  list-style: none;
+  padding: 0;
+  font-family: monospace;
+  font-size: 1.1rem;
+}
+
+.tokenomics-section li {
+  margin: 0.5rem 0;
+}
+
+.community-section .raid-btn {
+  background: red;
+  color: white;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.footer-belt {
+  position: sticky;
+  bottom: 0;
+  background: #f9d484;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.footer-belt button {
+  background: gold;
+  color: black;
+  font-weight: bold;
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.spinning-gun {
+  width: 40px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.bullet-hole {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  pointer-events: none;
+  user-select: none;
+  z-index: 9999;
+  transition: opacity 1s ease;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+.roadmap-section {
+  background: linear-gradient(to bottom, #cce0ff, #fef9d8);
+  padding: 80px 20px 140px; /* increased bottom padding */
+  margin-top: 40px;
+  border-top: 4px dashed #000;
+  position: relative;
+  z-index: 1;
+}
+}
+.roadmap-container > div:last-child {
+  margin-bottom: 80px;
+}
+
+ 
+
+.roadmap-section h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+}
+
+
+
+
+.roadmap-title {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 60px;
+}
+
+.roadmap-vertical-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.roadmap-vertical-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: repeating-linear-gradient(
+    to bottom,
+    #2563eb,
+    #2563eb 8px,
+    transparent 8px,
+    transparent 16px
+  );
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.roadmap-step {
+  background: linear-gradient(to bottom right, #facc15, #f97316);
+  color: #000;
+  padding: 14px 22px;
+  border-radius: 12px;
+  border: 2px solid #2563eb;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15);
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1rem;
+  position: relative;
+  z-index: 1;
+  width: fit-content;
+  min-width: 220px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .roadmap-vertical-wrapper {
+    gap: 30px;
+  }
+}
+
+.about {
+  text-align: center;
+  padding: 60px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.about p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+.about-inline {
+  margin-top: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #111;
+}
+
+.about-inline h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #000;
+}
+
+.token-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+.token-box {
+  background: linear-gradient(145deg, #f4d174, #f0bd64);
+  border: 3px solid #536ffa;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  color: #222;
+  text-shadow: 0.5px 0.5px #fff;
+}
+
+.token-box:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.token-box h3 {
+  margin-bottom: 0.5rem;
+  color: #536ffa;
+  font-size: 1.4rem;
+}
+
+.token-box p {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.twitter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: linear-gradient(145deg, #454545, #4b4b4b);
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.twitter-btn:hover {
+  background: linear-gradient(145deg, #484848, #3c3c3c);
+  transform: scale(1.05);
+}
+
+.x-logo {
+  width: 20px;
+  height: 20px;
+  filter: invert(1);
+}
+
+#mobileGun {
+  display: none;
+  position: fixed;
+  width: 60px;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.gun-btn {
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.gun-btn:active {
+  transform: translateY(2px) scale(0.95);
+}
+.why-section {
+  background: radial-gradient(circle at center, #1852ce, #f9dfa3);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.why-section h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  text-shadow: 1px 1px royalblue;
+}
+
+.why-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.why-card {
+  background: #fff;
+  color: #111;
+  border: 4px dashed red;
+  box-shadow: 5px 5px 0 rgba(255, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 20px;
+  width: 200px;
+  transition: transform 0.2s ease;
+  transform: rotate(-1.5deg);
+}
+
+.why-card:hover {
+  transform: rotate(1deg) scale(1.05);
+  box-shadow: 8px 8px 0 rgba(255, 255, 0, 0.8);
+}
+
+.why-card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+.tokenomics-section {
+  padding: 5rem 2rem;
+  background: linear-gradient(to bottom right, #f8d97f, #e6f0ff);
+  border-top: 4px dotted #ffcc00;
+  border-bottom: 4px dotted #ffcc00;
+  text-align: center;
+}
+
+.tokenomics-section h2 {
+  font-family: 'Comic Neue', cursive;
+  font-size: 2.2rem;
+  color: #222;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px #eee;
+}
+
+.tokenomics-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.tokenomics-box {
+  background: linear-gradient(to top, #ffd366, #ffcd5a);
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  min-width: 200px;
+  max-width: 250px;
+  transition: transform 0.2s ease;
+}
+
+.tokenomics-box:hover {
+  transform: translateY(-6px);
+}
+
+.tokenomics-box h3 {
+  color: #3366ff;
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  text-shadow: 1px 1px 1px royalblue;
+}
+
+.tokenomics-box p {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.tokenomics-title {
+  text-align: center;
+}
+.divider {
+  height: 20px;
+
+   
+    
+
+  margin: 0 auto;
+  width: 100%;
+}
+footer {
+  position: relative;
+  z-index: 0;
+}
